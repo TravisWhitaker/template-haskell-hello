@@ -1,0 +1,23 @@
+cabal-version:       2.2
+
+name:                template-haskell-hello
+version:             0.1.0.0
+synopsis:            Minimal template-haskell package for testing TH execution with cross-compilers.
+description:         Minimal template-haskell package for testing TH execution with cross-compilers.
+homepage:            https://github.com/TravisWhitaker/template-haskell-hello
+bug-reports:         https://github.com/TravisWhitaker/template-haskell-hello/issues
+license:             MIT
+license-file:        LICENSE
+author:              Travis Whitaker
+maintainer:          pi.boy.travis@gmail.com
+copyright:           Travis Whitaker 2019
+category:            Testing
+extra-source-files:  CHANGELOG.md, README.md
+
+executable template-haskell-hello
+  main-is:             Main.hs
+  other-modules:       GenMain
+  other-extensions:    TemplateHaskell
+  build-depends:       base ^>=4.12.0.0
+                     , template-haskell
+  default-language:    Haskell2010

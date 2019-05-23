@@ -1,0 +1,12 @@
+.stack-work
+**/*.swp
+.shake
+.local-stack-root
+build
+.mesash_log
+dist
+**/TAGS
+**/*~
+**/.ghc.environment*
+dist-newstyle
+**/cabal.project.local
