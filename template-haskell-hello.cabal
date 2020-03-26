@@ -18,6 +18,6 @@ executable template-haskell-hello
   main-is:             Main.hs
   other-modules:       GenMain
   other-extensions:    TemplateHaskell
-  build-depends:       base ^>=4.12.0.0
+  build-depends:       base >=4.12.0.0 && < 5
                      , template-haskell
   default-language:    Haskell2010
