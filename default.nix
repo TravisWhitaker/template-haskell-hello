@@ -3,9 +3,9 @@
 }:
 let haskellNix = import (builtins.fetchGit
     {
-        url = "https://github.com/TravisWhitaker/haskell.nix";
-        ref = "linux-cross-aarch64-fix";
-        rev = "1c556d0f028d71da6b63d08e0fce568388397d51";
+        url = "https://github.com/input-output-hk/haskell.nix";
+        ref = "master";
+        rev = "c713316282500c520bfe818475f483969866a0bd";
     });
     native = pkgs haskellNix;
     arm64 = (pkgs haskellNix).pkgsCross.aarch64-multiplatform;
