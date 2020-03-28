@@ -1,16 +1,16 @@
 { pkgs ? import <nixpkgs>
-, haskellCompiler ? "ghc883"
+, haskellCompiler ? "ghc865"
 }:
 let haskellNix = import (builtins.fetchGit
     {
         url = "https://github.com/input-output-hk/haskell.nix";
         ref = "master";
-        rev = "c713316282500c520bfe818475f483969866a0bd";
+        rev = "8040c12c54bfecc9931456b8c8502965d7af3b9b";
     });
     native = pkgs haskellNix;
     arm64 = (pkgs haskellNix).pkgsCross.aarch64-multiplatform;
-in arm64.haskell-nix.cabalProject
+in native.haskell-nix.cabalProject
 {
-    src = arm64.haskell-nix.haskellLib.cleanGit { src = ./.; };
-    ghc = arm64.buildPackages.pkgs.haskell-nix.compiler.${haskellCompiler};
+    src = native.haskell-nix.haskellLib.cleanGit { src = ./.; };
+    ghc = native.buildPackages.pkgs.haskell-nix.compiler.${haskellCompiler};
 }
