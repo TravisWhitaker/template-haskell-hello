@@ -4,7 +4,7 @@ let haskellNix = import (builtins.fetchGit
     {
         url = "https://github.com/input-output-hk/haskell.nix";
         ref = "master";
-        rev = "6ab363fc7df582147a0629ba6df064ea96c500b0";
+        rev = "5abcfb51bbe985b8dfd4917058d9a2a9da49e007";
     }) {};
     native = import haskellNix.sources.nixpkgs-unstable haskellNix.nixpkgsArgs;
     arm64 = native.pkgsCross.aarch64-multiplatform;
